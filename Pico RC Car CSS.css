@@ -1,0 +1,218 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: #f9f9f9;
+  position: relative;
+  }
+
+/* General arrow style */
+.arrow {
+  display: inline-block;
+  position: absolute;
+  cursor: pointer;
+  border: solid red;
+  border-width: 0 2vw 2vw 0;
+  padding: 4vw;
+  box-sizing: border-box;
+}
+
+/* Diagonal arrow variant */
+.diagonal-arrow {
+  border-color: blue;
+  border-style: dashed;
+}
+
+/* Active (clicked) arrow visual feedback */
+.arrow.active {
+  background-color: rgba(0, 255, 0, 0.2);
+  box-shadow: 0 0 10px green;
+}
+
+/* Cardinal directions */
+.up {
+  top: 10vh;
+  left: 50%;
+  transform: translateX(-50%) rotate(-135deg);
+}
+
+.right {
+  top: 50%;
+  right: 10vw;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.down {
+  bottom: 10vh;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.left {
+  top: 50%;
+  left: 10vw;
+  transform: translateY(-50%) rotate(135deg);
+}
+
+/* Diagonal directions */
+.top-right {
+  top: 10vh;
+  right: 25vw;
+  transform: rotate(270deg);
+}
+
+.bottom-right {
+  bottom: 10vh;
+  right: 25vw;
+  transform: rotate(360deg);
+}
+
+.bottom-left {
+  bottom: 10vh;
+  left: 25vw;
+  transform: rotate(90deg);
+}
+
+.top-left {
+  top: 10vh;
+  left: 25vw;
+  transform: rotate(180deg);
+}
+
+
+/*Stop button*/
+.stop-button {
+  --sign-size: 200px;
+  width: var(--sign-size);
+  height: var(--sign-size);
+  background-color: red;
+  color: white;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: calc(var(--sign-size) / 5);
+    clip-path: polygon(
+      30% 0%, 70% 0%, 
+      100% 30%, 100% 70%, 
+      70% 100%, 30% 100%,
+        0% 70%, 0% 30%
+    );
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+/*Wifi Setup*/
+#wifi-setup {
+  position: fixed;
+  top: 220px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #0f0;
+  padding: 12px;
+  border-radius: 6px;
+  font-family: monospace;
+  box-shadow: 0 0 8px #0f0;
+  z-index: 9999;
+  width: 300px;
+}
+
+#wifi-setup input {
+  width: 100%;
+  margin: 4px 0;
+  padding: 6px;
+  border: none;
+  border-radius: 4px;
+}
+
+#wifi-setup button {
+  margin-top: 6px;
+  padding: 6px 10px;
+  background: #0f0;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+#wifi-feedback {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #0f0;
+}
+
+
+/* Connection Indicators*/
+#connection-status {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.9); /* semi-transparent white bg */
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  z-index: 9999; /* Make sure it’s on top */
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  user-select: none;
+}
+
+#status-dot {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: red; /* default = disconnected */
+  margin-right: 10px;
+}
+
+#status-text {
+  color: #333;
+}
+
+/*Console Log Box*/
+#console-logs {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 320px;
+  max-height: 180px;
+  background: rgba(0, 0, 0, 0.85);
+  color: #0f0;
+  font-family: monospace;
+  font-size: 12px;
+  padding: 10px;
+  border-radius: 6px;
+  overflow-y: auto;
+  box-shadow: 0 0 12px #0f0;
+  white-space: pre-wrap; /* preserve formatting */
+  user-select: text;
+  z-index: 9999;
+}
+
+/*Telemetry Log Box*/
+#telemetry {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 320px;
+  max-height: 180px;
+  background: rgba(0, 0, 0, 0.85);
+  color: #0f0;
+  font-family: monospace;
+  font-size: 12px;
+  padding: 10px;
+  border-radius: 6px;
+  overflow-y: auto;
+  box-shadow: 0 0 12px #0f0;
+  white-space: pre-wrap;
+  user-select: text;
+  z-index: 9999;
+}

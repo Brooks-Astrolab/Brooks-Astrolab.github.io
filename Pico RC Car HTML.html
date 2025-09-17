@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Cardinal arrows -->
+  <i class="arrow up" id="arrow-up"></i>
+  <i class="arrow right" id="arrow-right"></i>
+  <i class="arrow down" id="arrow-down"></i>
+  <i class="arrow left" id="arrow-left"></i>
+
+  <!-- Diagonal arrows -->
+  <i class="arrow diagonal-arrow top-right" id="arrow-top-right"></i>
+  <i class="arrow diagonal-arrow bottom-right" id="arrow-bottom-right"></i>
+  <i class="arrow diagonal-arrow bottom-left" id="arrow-bottom-left"></i>
+  <i class="arrow diagonal-arrow top-left" id="arrow-top-left"></i>
+
+  <!--Stop button-->
+  <i class="stop-button" id="stop-button">STOP</i>
+
+  <!-- Wifi User Input-->
+  <div id="wifi-setup">
+    <h3>Wi-Fi Setup</h3>
+    <input type="text" id="wifi-ssid" placeholder="Network SSID" />
+    <input type="password" id="wifi-password" placeholder="Password" />
+    <button onclick="submitWifiCredentials()">Connect</button>
+    <div id="wifi-feedback"></div>
+  </div>
+
+
+  <!-- Sent Commands -->
+  <div id="telemetry" style="margin-top:20px; font-family:monospace;"></div>
+
+  <!-- PicoW Console Log Display -->
+  <div id="console-logs"></div>
+
+  <!-- Connection Indicator -->
+  <div id="connection-status">
+    <span id="status-dot"></span>
+    <span id="status-text">Disconnected</span>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
