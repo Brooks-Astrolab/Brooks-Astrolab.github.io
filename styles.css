@@ -1,28 +1,29 @@
+/* === Base Styles === */
 body {
   margin: 0;
   height: 100vh;
   background-color: #f9f9f9;
   position: relative;
-  }
+  font-family: Arial, sans-serif;
+}
 
-/* General arrow style */
+/* === Arrows === */
 .arrow {
+  border: solid red;
+  border-width: 0 4vw 4vw 0;
   display: inline-block;
+  padding: 6vw;
   position: absolute;
   cursor: pointer;
-  border: solid red;
-  border-width: 0 2vw 2vw 0;
-  padding: 4vw;
   box-sizing: border-box;
 }
 
-/* Diagonal arrow variant */
 .diagonal-arrow {
   border-color: blue;
   border-style: dashed;
 }
 
-/* Active (clicked) arrow visual feedback */
+/* Active arrow feedback */
 .arrow.active {
   background-color: rgba(0, 255, 0, 0.2);
   box-shadow: 0 0 10px green;
@@ -78,8 +79,7 @@ body {
   transform: rotate(180deg);
 }
 
-
-/*Stop button*/
+/* === Stop Button === */
 .stop-button {
   --sign-size: 20vw;
   width: var(--sign-size);
@@ -87,42 +87,76 @@ body {
   background-color: red;
   color: white;
   display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    font-size: calc(var(--sign-size) / 5);
-    clip-path: polygon(
-      30% 0%, 70% 0%, 
-      100% 30%, 100% 70%, 
-      70% 100%, 30% 100%,
-        0% 70%, 0% 30%
-    );
+  justify-content: center;
+  align-items: center;
+  font-size: calc(var(--sign-size) / 5);
+  clip-path: polygon(
+    30% 0%, 70% 0%,
+    100% 30%, 100% 70%,
+    70% 100%, 30% 100%,
+    0% 70%, 0% 30%
+  );
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); 
+  transform: translate(-50%, -50%);
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   cursor: pointer;
 }
 
-/*Wifi Setup*/
+/* === Telemetry Log === */
+#telemetry {
+  position: fixed;
+  top: 2vh;
+  left: 2vw;
+  width: 30vw;
+  max-height: 30vh;
+  overflow-y: auto;
+  font-family: monospace;
+  font-size: 1.2vw;
+  padding: 1vw;
+  background-color: #000;
+  color: #0f0;
+  border: 1px solid #0f0;
+  box-shadow: 0 0 10px #0f0;
+  z-index: 1000;
+}
+
+/* === Console Log Box === */
+#console-log {
+  position: fixed;
+  bottom: 2vh;
+  right: 2vw;
+  width: 30vw;
+  max-height: 30vh;
+  overflow-y: auto;
+  font-family: monospace;
+  font-size: 1.2vw;
+  padding: 1vw;
+  background-color: #000;
+  color: #0ff;
+  border: 1px solid #0ff;
+  box-shadow: 0 0 10px #0ff;
+  z-index: 1000;
+}
+
+/* === WiFi Setup Form === */
 #wifi-setup {
   position: fixed;
   bottom: 2vh;
   left: 2vw;
   width: 30vw;
-  background: rgba(0, 0, 0, 0.8);
-  color: #0f0;
   padding: 1vw;
-  border-radius: 6px;
-  font-family: monospace;
-  box-shadow: 0 0 8px #0f0;
+  background: #eee;
+  border-radius: 0.5vw;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-size: 1.2vw;
+  z-index: 1000;
 }
 
 #wifi-setup input {
   width: 100%;
-  margin: 0.5vw;
+  padding: 0.5vw;
   margin-bottom: 0.5vw;
   font-size: 1.2vw;
 }
@@ -130,37 +164,28 @@ body {
 #wifi-setup button {
   width: 100%;
   padding: 0.8vw;
-  border-radius: 0.3vw;
+  font-size: 1.2vw;
   background-color: #2a8;
   color: white;
-  font-weight: bold;
   border: none;
+  border-radius: 0.3vw;
   cursor: pointer;
 }
 
-#wifi-feedback {
-  margin-top: 6px;
-  font-size: 12px;
-  color: #0f0;
-}
-
-
-/* Connection Indicators*/
+/* === Connection Status Indicator === */
 #connection-status {
   position: fixed;
   top: 2vh;
   right: 2vw;
-  background: rgba(255, 255, 255, 0.9); /* semi-transparent white bg */
+  background: rgba(255, 255, 255, 0.9);
   padding: 1vw 1.5vw;
   border-radius: 0.5vw;
   box-shadow: 0 0 8px rgba(0,0,0,0.15);
   display: flex;
   align-items: center;
-  z-index: 9999; /* Make sure it’s on top */
-  font-family: Arial, sans-serif;
   font-weight: bold;
   font-size: 1.2vw;
-  user-select: none;
+  z-index: 1000;
 }
 
 #status-dot {
@@ -168,50 +193,10 @@ body {
   width: 1.5vw;
   height: 1.5vw;
   border-radius: 50%;
-  background-color: red; /* default = disconnected */
+  background-color: red;
   margin-right: 1vw;
 }
 
 #status-text {
   color: #333;
-}
-
-/*Console Log Box*/
-#console-logs {
-  position: fixed;
-  bottom: 2vh;
-  right: 2vw;
-  width: 30vw;
-  max-height: 30vh;
-  background: rgba(0, 0, 0, 0.85);
-  color: #0f0;
-  font-family: monospace;
-  font-size: 1.2vw;
-  padding: 1vw;
-  border-radius: 6px;
-  overflow-y: auto;
-  box-shadow: 0 0 12px #0f0;
-  white-space: pre-wrap; /* preserve formatting */
-  user-select: text;
-  z-index: 1000;
-}
-
-/*Telemetry Log Box*/
-#telemetry {
-  position: fixed;
-  top: 2vh;
-  left: 2vw;
-  width: 30vw;
-  max-height: 30vh;
-  background: rgba(0, 0, 0, 0.85);
-  color: #0f0;
-  font-family: monospace;
-  font-size: 1.2vw;
-  padding: 1vw;
-  border-radius: 6px;
-  overflow-y: auto;
-  box-shadow: 0 0 12px #0f0;
-  white-space: pre-wrap;
-  user-select: text;
-  z-index: 1000;
 }
