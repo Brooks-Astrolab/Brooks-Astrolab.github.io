@@ -10,9 +10,9 @@ body {
 /* === Arrows === */
 .arrow {
   border: solid red;
-  border-width: 0 4vw 4vw 0;
+  border-width: 0 2vw 2vw 0;
   display: inline-block;
-  padding: 6vw;
+  padding: 3vw;
   position: absolute;
   cursor: pointer;
   box-sizing: border-box;
@@ -81,7 +81,7 @@ body {
 
 /* === Stop Button === */
 .stop-button {
-  --sign-size: 20vw;
+  --sign-size: 6vw;
   width: var(--sign-size);
   height: var(--sign-size);
   background-color: red;
@@ -109,8 +109,8 @@ body {
   position: fixed;
   top: 2vh;
   left: 2vw;
-  width: 30vw;
-  max-height: 30vh;
+  width: 15vw;
+  max-height: 15vh;
   overflow-y: auto;
   font-family: monospace;
   font-size: 1.2vw;
@@ -145,7 +145,7 @@ body {
   position: fixed;
   bottom: 2vh;
   left: 2vw;
-  width: 30vw;
+  width: 20vw;
   padding: 1vw;
   background: #eee;
   border-radius: 0.5vw;
