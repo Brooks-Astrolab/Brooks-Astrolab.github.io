@@ -115,7 +115,7 @@ body {
   font-family: monospace;
   font-size: 1.2vh;
   padding: 1vw;
-  background: rgba (0,0,0,0.85);
+  background: rgba(0,0,0,0.85);
   color: #0f0;
   border: 1px solid #0f0;
   box-shadow: 0 0 10px #0f0;
@@ -135,7 +135,7 @@ body {
   font-size: 1.2vh;
   padding: 1vw;
   background: rgba(0,0,0,0.85);
-  color: #0ff;
+  color: #0f0;
   border: 1px solid #0ff;
   box-shadow: 0 0 10px #0f0;
   white-space: pre-wrap;
