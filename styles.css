@@ -191,14 +191,14 @@ body {
   display: flex;
   align-items: center;
   font-weight: bold;
-  font-size: 1.2vh;
+  font-size: 1.2vw;
   z-index: 9999;
 }
 
 #status-dot {
   display: inline-block;
-  width: 1.5vh;
-  height: 1.5vh;
+  width: 1.5vw;
+  height: 1.5vw;
   border-radius: 50%;
   background-color: red;
   margin-right: 1vw;
