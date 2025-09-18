@@ -115,11 +115,12 @@ body {
   font-family: monospace;
   font-size: 1.2vh;
   padding: 1vw;
-  background-color: #000;
+  background: rgba (0,0,0,0.85);
   color: #0f0;
   border: 1px solid #0f0;
   box-shadow: 0 0 10px #0f0;
-  z-index: 1000;
+  
+  z-index: 9999;
 }
 
 /* === Console Log Box === */
@@ -128,15 +129,17 @@ body {
   bottom: 20px;
   right: 2px;
   width: 20vw;
-  max-height: 30vh;
+  max-height: 20vh;
   overflow-y: auto;
   font-family: monospace;
   font-size: 1.2vh;
   padding: 1vw;
-  background-color: #000;
+  background: rgba(0,0,0,0.85);
   color: #0ff;
   border: 1px solid #0ff;
-  box-shadow: 0 0 10px #0ff;
+  box-shadow: 0 0 10px #0f0;
+  white-space: pre-wrap;
+  user-select: text;
   z-index: 9999;
 }
 
