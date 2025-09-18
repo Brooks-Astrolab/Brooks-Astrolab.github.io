@@ -72,13 +72,13 @@ function fetchConsoleLogs() {
   fetch('/logs')
     .then(response => response.json())
     .then(data => {
-      const logsDiv = document.getElementById('console-logs');
+      const logsDiv = document.getElementById('console-log');
       logsDiv.innerHTML = data.join('\n');
       logsDiv.scrollTop = logsDiv.scrollHeight; // auto-scroll to bottom
     })
     .catch(err => {
       // Optionally show error inside console logs
-      const logsDiv = document.getElementById('console-logs');
+      const logsDiv = document.getElementById('console-log');
       logsDiv.innerHTML = 'Error fetching logs';
       console.error('Failed to fetch logs:', err);
     });
