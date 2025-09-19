@@ -69,7 +69,7 @@ function logTelemetry(message) {
 
 //Track PicoW serial logs
 function fetchConsoleLogs() {
-  fetch('/logs')
+  fetch('${PICO_IP}/logs')
     .then(response => response.json())
     .then(data => {
       const logsDiv = document.getElementById('console-log');
